@@ -112,6 +112,9 @@ BOOL CSimpleDialogBoxDlg::OnInitDialog()
 	position = m_list.Find(300.00);
 	m_list.SetAt(position, 400.00);
 
+	position = m_list.Find(95.78);
+	m_list.RemoveAt(position);
+
 	//iterate the list
 	POSITION pos = m_list.GetHeadPosition();
 	while (pos) {
@@ -120,7 +123,6 @@ BOOL CSimpleDialogBoxDlg::OnInitDialog()
 		strVal.Format(L"%.2f\n", nData);
 		m_strText.Append(strVal);
 	}
-
 	CWnd* label = GetDlgItem(IDC_STATIC);
 	label->SetWindowText(m_strText);
 	//AfxMessageBox(m_strText);
