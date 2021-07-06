@@ -109,6 +109,9 @@ BOOL CSimpleDialogBoxDlg::OnInitDialog()
 	m_list.InsertBefore(position, 200.0);
 	m_list.InsertAfter(position, 300.0);
 
+	position = m_list.Find(300.00);
+	m_list.SetAt(position, 400.00);
+
 	//iterate the list
 	POSITION pos = m_list.GetHeadPosition();
 	while (pos) {
