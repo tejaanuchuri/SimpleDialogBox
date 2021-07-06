@@ -98,7 +98,6 @@ BOOL CSimpleDialogBoxDlg::OnInitDialog()
 	// Set the icon for this dialog.  The framework does this automatically
 	//  when the application's main window is not a dialog
 	CArray<CString, CString>strArray;
-
 	//Add names to CArray
 	strArray.Add(L"Ali");
 	strArray.Add(L"Ahmed");
@@ -108,9 +107,11 @@ BOOL CSimpleDialogBoxDlg::OnInitDialog()
 
 	strArray.SetAt(2, L"Salman");
 
+	CArray<CString, CString>strArray2;
+	strArray2.Copy(strArray);
 	//Retrive names from CArray
-	for (int i = 0; i < strArray.GetSize(); i++) {
-		m_strText.Append(strArray.GetAt(i) + L"\n");
+	for (int i = 0; i < strArray2.GetSize(); i++) {
+		m_strText.Append(strArray2.GetAt(i) + L"\n");
 	}
 	CWnd* label = GetDlgItem(IDC_STATIC);
 	label->SetWindowText(m_strText);
