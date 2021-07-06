@@ -105,14 +105,19 @@ BOOL CSimpleDialogBoxDlg::OnInitDialog()
 	m_list.AddTail(95.78);
 	m_list.AddTail(90.1);
 
+	POSITION position = m_list.Find(85.26);
+	m_list.InsertBefore(position, 200.0);
+	m_list.InsertAfter(position, 300.0);
+
 	//iterate the list
 	POSITION pos = m_list.GetHeadPosition();
 	while (pos) {
 		double nData = m_list.GetNext(pos);
 		CString strVal;
-		strVal.Format(L"%.f\n", nData);
+		strVal.Format(L"%.2f\n", nData);
 		m_strText.Append(strVal);
 	}
+
 	CWnd* label = GetDlgItem(IDC_STATIC);
 	label->SetWindowText(m_strText);
 	//AfxMessageBox(m_strText);
