@@ -33,4 +33,5 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	CButton m_text_control;
+	CString m_strText;
 };

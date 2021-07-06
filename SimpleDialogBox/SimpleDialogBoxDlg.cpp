@@ -97,12 +97,19 @@ BOOL CSimpleDialogBoxDlg::OnInitDialog()
 
 	// Set the icon for this dialog.  The framework does this automatically
 	//  when the application's main window is not a dialog
-	SetIcon(m_hIcon, TRUE);			// Set big icon
-	SetIcon(m_hIcon, FALSE);		// Set small icon
+	CArray<CString, CString>strArray;
 
-	// TODO: Add extra initialization here
+	//Add names to CArray
+	strArray.Add(L"Ali");
+	strArray.Add(L"Ahmed");
+	strArray.Add(L"Mark");
+	//Retrive names from CArray
+	for (int i = 0; i < strArray.GetSize(); i++) {
+		m_strText.Append(strArray.GetAt(i) +L"\n");
+	}
 	CWnd* label = GetDlgItem(IDC_STATIC);
-	label->SetWindowText(_T("Hello Teja...!"));
+	label->SetWindowText(m_strText);
+	//AfxMessageBox(m_strText);
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
