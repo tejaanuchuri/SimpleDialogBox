@@ -103,9 +103,14 @@ BOOL CSimpleDialogBoxDlg::OnInitDialog()
 	strArray.Add(L"Ali");
 	strArray.Add(L"Ahmed");
 	strArray.Add(L"Mark");
+
+	strArray.InsertAt(1, L"Allan");
+
+	strArray.SetAt(2, L"Salman");
+
 	//Retrive names from CArray
 	for (int i = 0; i < strArray.GetSize(); i++) {
-		m_strText.Append(strArray.GetAt(i) +L"\n");
+		m_strText.Append(strArray.GetAt(i) + L"\n");
 	}
 	CWnd* label = GetDlgItem(IDC_STATIC);
 	label->SetWindowText(m_strText);
